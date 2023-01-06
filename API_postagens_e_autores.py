@@ -4,7 +4,7 @@ import json
 import jwt
 from datetime import datetime, timedelta
 from functools import wraps
-
+import os
 
 
 def token_obrigatório(f):  #→ a função do token vai receber outra função como parâmetro. 
@@ -185,5 +185,8 @@ def excluir_autor(id_autor):
 
     return jsonify({'mensagem':'Autor excluído com sucesso!'})
 
-app.run(port=5000,host='localhost',debug=True)
 
+#Para hospedar localmente:  app.run(port=5000,host='localhost',debug=True)
+#Para hospedar na nuvem:
+if __name__=='__main__':
+    app.run(debug=True, port=os.getenv("PORT",default=5000))

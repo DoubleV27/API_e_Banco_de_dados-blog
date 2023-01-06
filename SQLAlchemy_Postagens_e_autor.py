@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 #Criar uma instância de SQLAlchemy
 app.config['SECRET_KEY'] = 'ABCFRGH25#!SA'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+#Para hospedar localmente: app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+#Para hospedar na nuvem:
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:VENgI87bAf7NaGlfiRe8@containers-us-west-139.railway.app:7488/railway'
 
 db = SQLAlchemy(app)
 db:SQLAlchemy

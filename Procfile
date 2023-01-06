@@ -1,0 +1,1 @@
+web: gunicorn API_postagens_e_autores:app
